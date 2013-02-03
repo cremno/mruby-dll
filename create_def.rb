@@ -6,7 +6,7 @@ if files.empty?
   exit 1
 end
 File.open('mruby.def', 'w') do |f|
-  f.puts 'LIBRARY'
+  f.puts 'LIBRARY mruby.dll'
   f.puts 'EXPORTS'
   IO.popen("#{ctags_exe} -u -x --c-kinds=p #{files.join(' ')}") do |io|
     io.each_line do |line|
