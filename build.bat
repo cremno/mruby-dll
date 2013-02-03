@@ -4,7 +4,7 @@ CD mruby
 RD /S bin\dll
 RD /S build\dll
 SET MRUBY_CONFIG=..\build_config.rb
-RUBY -e "begin;load 'minirake';rescue SystemExit;exit;end"
+RUBY minirake
 MD bin\dll
 CD build
 MD dll
