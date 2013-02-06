@@ -85,8 +85,6 @@ EXPORTS
 	mrb_gc_protect
 	mrb_to_int
 	mrb_check_type
-	;mrb_cmperr
-	;mrb_cmpint
 	mrb_define_alias
 	mrb_class_name
 	mrb_define_global_const
@@ -142,7 +140,6 @@ EXPORTS
 	mrbc_filename
 	mrb_parser_new
 	mrb_parser_free
-	;mrb_parser_filename
 	mrb_parser_parse
 	mrb_parse_file
 	mrb_parse_string
@@ -168,11 +165,9 @@ EXPORTS
 	mrb_hash_get
 	mrb_hash_fetch
 	mrb_hash_delete_key
-	;mrb_hash
 	mrb_hash_keys
 	mrb_check_hash_type
 	mrb_hash_tbl
-	;mrb_obj_is_proc
 	mrb_gc_mark_ht
 	mrb_gc_mark_ht_size
 	mrb_gc_free_ht
@@ -213,7 +208,6 @@ EXPORTS
 	mrb_str_to_dbl
 	mrb_str_to_str
 	mrb_str_hash
-	;mrb_str_hash_cmp
 	mrb_str_buf_append
 	mrb_str_inspect
 	mrb_str_equal
