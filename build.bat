@@ -18,8 +18,6 @@ rc /nologo /fo %BUILD_SHARED_DIR%\mruby.res %MRUBY_DLL_DIR%\mruby.rc
 cd %BUILD_SHARED_DIR%
 link /nologo /ltcg /dll /def:%MRUBY_DLL_DIR%\mruby.def libmruby.lib mruby.res
 link /nologo /ltcg mrbc\mrbc.obj print.obj mruby.lib
-link /nologo /ltcg mruby\mruby.obj print.obj mruby.lib
-link /nologo /ltcg mirb\mirb.obj mruby.lib
 for %%f in (mruby.dll mruby.lib *.exe) do copy %%f %INSTALL_SHARED_DIR% > nul
 :END
 endlocal
