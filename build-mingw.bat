@@ -12,8 +12,6 @@ windres %MRUBY_DLL_DIR%\mruby.rc %BUILD_SHARED_DIR%\mrubyres.o
 cd %BUILD_SHARED_DIR%
 gcc -s -shared -Wl,--out-implib,libmruby.a -o mruby.dll %MRUBY_DLL_DIR%\mruby.def %HOST_PATH%\lib\libmruby.a mrubyres.o
 gcc -s -o mrbc.exe %HOST_PATH%\tools\mrbc\mrbc.o %HOST_PATH%\src\print.o libmruby.a
-gcc -s -o mruby.exe %HOST_PATH%\tools\mruby\mruby.o %HOST_PATH%\src\print.o libmruby.a
-gcc -s -o mirb.exe %HOST_PATH%\tools\mirb\mirb.o libmruby.a
 for %%f in (mruby.dll libmruby.a *.exe) do copy %%f %INSTALL_SHARED_DIR% > nul
 :end
 endlocal
