@@ -1,7 +1,5 @@
 LIBRARY mruby.dll
 EXPORTS
-	mrb_show_copyright
-	mrb_show_version
 	mrb_define_class
 	mrb_define_module
 	mrb_singleton_class
@@ -18,7 +16,7 @@ EXPORTS
 	mrb_module_new
 	mrb_class_defined
 	mrb_class_get
-	mrb_class_obj_get
+	mrb_class_get_under
 	mrb_obj_dup
 	mrb_check_to_integer
 	mrb_obj_respond_to
@@ -31,16 +29,23 @@ EXPORTS
 	mrb_intern_cstr
 	mrb_intern2
 	mrb_intern_str
+	mrb_check_intern_cstr
+	mrb_check_intern
+	mrb_check_intern_str
 	mrb_sym2name
 	mrb_sym2name_len
-	;mrb_str_format
+	mrb_sym2str
+	mrb_str_format
 	mrb_malloc
 	mrb_calloc
 	mrb_realloc
+	mrb_realloc_simple
+	mrb_malloc_simple
 	mrb_obj_alloc
 	mrb_free
 	mrb_str_new
 	mrb_str_new_cstr
+	mrb_str_new_static
 	mrb_open
 	mrb_open_allocf
 	mrb_irep_free
@@ -49,7 +54,7 @@ EXPORTS
 	mrb_run
 	mrb_p
 	mrb_obj_id
-	mrb_to_id
+	mrb_obj_to_sym
 	mrb_obj_eq
 	mrb_obj_equal
 	mrb_equal
@@ -58,6 +63,7 @@ EXPORTS
 	mrb_inspect
 	mrb_eql
 	mrb_garbage_collect
+	mrb_full_gc
 	mrb_incremental_gc
 	mrb_gc_arena_save
 	mrb_gc_arena_restore
@@ -77,8 +83,11 @@ EXPORTS
 	mrb_exc_raise
 	mrb_raise
 	mrb_raisef
+	mrb_name_error
 	mrb_warn
 	mrb_bug
+	mrb_print_backtrace
+	mrb_print_error
 	mrb_yield
 	mrb_yield_argv
 	mrb_class_new_instance
@@ -118,6 +127,7 @@ EXPORTS
 	mrb_ary_entry
 	mrb_ary_shift
 	mrb_ary_clear
+	mrb_ary_join
 	mrb_define_class_id
 	mrb_define_module_id
 	mrb_vm_define_class
@@ -137,6 +147,7 @@ EXPORTS
 	mrbc_context_new
 	mrbc_context_free
 	mrbc_filename
+	mrbc_partial_hook
 	mrb_parser_new
 	mrb_parser_free
 	mrb_parser_parse
@@ -151,11 +162,17 @@ EXPORTS
 	mrb_load_string_cxt
 	mrb_load_nstring_cxt
 	mrb_data_object_alloc
-	mrb_dump_irep_cfunc
+	mrb_data_check_type
+	mrb_data_get_ptr
+	mrb_data_check_and_get
 	mrb_dump_irep_binary
+	mrb_dump_irep_cfunc
 	mrb_read_irep_file
 	mrb_read_irep
 	mrb_load_irep_file
+	calc_crc_16_ccitt
+	mrb_objspace_each_objects
+	mrb_free_context
 	mrb_hash_new_capa
 	mrb_hash_new
 	mrb_hash_set
@@ -164,12 +181,17 @@ EXPORTS
 	mrb_hash_delete_key
 	mrb_hash_keys
 	mrb_check_hash_type
+	mrb_hash_empty_p
+	mrb_hash_clear
 	mrb_hash_tbl
-	mrb_gc_mark_ht
-	mrb_gc_mark_ht_size
-	mrb_gc_free_ht
+	mrb_gc_mark_hash
+	mrb_gc_mark_hash_size
+	mrb_gc_free_hash
 	mrb_add_irep
 	mrb_load_irep
+	mrb_flo_to_fixnum
+	mrb_flo_to_str
+	mrb_fixnum_to_str
 	mrb_fixnum_plus
 	mrb_fixnum_minus
 	mrb_fixnum_mul
@@ -181,7 +203,8 @@ EXPORTS
 	mrb_proc_copy
 	mrb_range_new
 	mrb_range_beg_len
-	mrb_str_decref
+	mrb_gc_free_str
+	mrb_str_modify
 	mrb_str_literal
 	mrb_str_concat
 	mrb_str_plus
@@ -210,6 +233,8 @@ EXPORTS
 	mrb_str_append
 	mrb_str_cmp
 	mrb_str_to_cstr
+	;mrb_float_value
+	;mrb_voidp_value
 	mrb_vm_special_get
 	mrb_vm_special_set
 	mrb_vm_iv_get
@@ -232,6 +257,7 @@ EXPORTS
 	mrb_iv_remove
 	mrb_iv_copy
 	mrb_const_defined_at
+	mrb_mod_constants
 	mrb_f_global_variables
 	mrb_gv_get
 	mrb_gv_set
