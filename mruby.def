@@ -35,7 +35,7 @@ EXPORTS
 	mrb_sym2name
 	mrb_sym2name_len
 	mrb_sym2str
-	mrb_str_format
+	;mrb_str_format
 	mrb_malloc
 	mrb_calloc
 	mrb_realloc
