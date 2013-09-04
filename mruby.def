@@ -11,6 +11,7 @@ EXPORTS
 	mrb_define_const
 	mrb_undef_method
 	mrb_undef_class_method
+	mrb_obj_new
 	mrb_instance_new
 	mrb_class_new
 	mrb_module_new
@@ -87,11 +88,10 @@ EXPORTS
 	mrb_warn
 	mrb_bug
 	mrb_print_backtrace
+	mrb_print_verbose_backtrace
 	mrb_print_error
 	mrb_yield
 	mrb_yield_argv
-	mrb_class_new_instance
-	mrb_class_new_instance_m
 	mrb_gc_protect
 	mrb_to_int
 	mrb_check_type
@@ -140,7 +140,6 @@ EXPORTS
 	mrb_method_search_vm
 	mrb_method_search
 	mrb_class_real
-	mrb_obj_call_init
 	mrb_gc_mark_mt
 	mrb_gc_mark_mt_size
 	mrb_gc_free_mt
@@ -151,6 +150,8 @@ EXPORTS
 	mrb_parser_new
 	mrb_parser_free
 	mrb_parser_parse
+	mrb_parser_set_filename
+	mrb_parser_get_filename
 	mrb_parse_file
 	mrb_parse_string
 	mrb_parse_nstring
@@ -164,7 +165,12 @@ EXPORTS
 	mrb_data_object_alloc
 	mrb_data_check_type
 	mrb_data_get_ptr
-	mrb_data_check_and_get
+	mrb_data_check_get_ptr
+	mrb_debug_get_filename
+	mrb_debug_get_line
+	mrb_debug_info_append_file
+	mrb_debug_info_alloc
+	mrb_debug_info_free
 	mrb_dump_irep_binary
 	mrb_dump_irep_cfunc
 	mrb_read_irep_file
@@ -212,6 +218,7 @@ EXPORTS
 	mrb_obj_as_string
 	mrb_str_resize
 	mrb_str_substr
+	mrb_string_type
 	mrb_check_string_type
 	mrb_str_buf_new
 	mrb_str_buf_cat
