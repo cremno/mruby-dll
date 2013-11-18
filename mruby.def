@@ -36,7 +36,6 @@ EXPORTS
 	mrb_sym2name
 	mrb_sym2name_len
 	mrb_sym2str
-	;mrb_str_format
 	mrb_malloc
 	mrb_calloc
 	mrb_realloc
@@ -49,10 +48,10 @@ EXPORTS
 	mrb_str_new_static
 	mrb_open
 	mrb_open_allocf
-	mrb_irep_free
 	mrb_close
 	mrb_top_self
 	mrb_run
+	mrb_context_run
 	mrb_p
 	mrb_obj_id
 	mrb_obj_to_sym
@@ -88,7 +87,6 @@ EXPORTS
 	mrb_warn
 	mrb_bug
 	mrb_print_backtrace
-	mrb_print_verbose_backtrace
 	mrb_print_error
 	mrb_yield
 	mrb_yield_argv
@@ -108,6 +106,7 @@ EXPORTS
 	mrb_pool_realloc
 	mrb_pool_can_realloc
 	mrb_alloca
+	mrb_ary_modify
 	mrb_ary_decref
 	mrb_ary_new_capa
 	mrb_ary_new
@@ -174,8 +173,9 @@ EXPORTS
 	mrb_dump_irep_binary
 	mrb_dump_irep_cfunc
 	mrb_read_irep_file
-	mrb_read_irep
 	mrb_load_irep_file
+	mrb_load_irep_file_cxt
+	mrb_read_irep
 	calc_crc_16_ccitt
 	mrb_objspace_each_objects
 	mrb_free_context
@@ -195,6 +195,10 @@ EXPORTS
 	mrb_gc_free_hash
 	mrb_add_irep
 	mrb_load_irep
+	mrb_load_irep_cxt
+	mrb_irep_free
+	mrb_irep_incref
+	mrb_irep_decref
 	mrb_flo_to_fixnum
 	mrb_flo_to_str
 	mrb_fixnum_to_str
@@ -241,7 +245,7 @@ EXPORTS
 	mrb_str_cmp
 	mrb_str_to_cstr
 	;mrb_float_value
-	;mrb_voidp_value
+	;mrb_cptr_value
 	mrb_vm_special_get
 	mrb_vm_special_set
 	mrb_vm_iv_get
@@ -268,6 +272,7 @@ EXPORTS
 	mrb_f_global_variables
 	mrb_gv_get
 	mrb_gv_set
+	mrb_gv_remove
 	mrb_obj_instance_variables
 	mrb_obj_iv_inspect
 	mrb_class_sym
