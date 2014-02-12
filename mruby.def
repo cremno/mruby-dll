@@ -18,6 +18,8 @@ EXPORTS
 	mrb_class_defined
 	mrb_class_get
 	mrb_class_get_under
+	mrb_module_get
+	mrb_module_get_under
 	mrb_obj_dup
 	mrb_check_to_integer
 	mrb_obj_respond_to
@@ -28,7 +30,8 @@ EXPORTS
 	mrb_funcall_argv
 	mrb_funcall_with_block
 	mrb_intern_cstr
-	mrb_intern2
+	mrb_intern
+	mrb_intern_static
 	mrb_intern_str
 	mrb_check_intern_cstr
 	mrb_check_intern
@@ -96,7 +99,6 @@ EXPORTS
 	mrb_define_alias
 	mrb_class_name
 	mrb_define_global_const
-	mrb_block_proc
 	mrb_attr_get
 	mrb_respond_to
 	mrb_obj_is_instance_of
@@ -111,18 +113,16 @@ EXPORTS
 	mrb_ary_new_capa
 	mrb_ary_new
 	mrb_ary_new_from_values
+	mrb_assoc_new
 	mrb_ary_concat
 	mrb_ary_splat
 	mrb_ary_push
 	mrb_ary_pop
-	mrb_ary_aget
 	mrb_ary_ref
 	mrb_ary_set
-	mrb_ary_len
 	mrb_ary_replace
 	mrb_check_array_type
 	mrb_ary_unshift
-	mrb_assoc_new
 	mrb_ary_entry
 	mrb_ary_shift
 	mrb_ary_clear
@@ -215,7 +215,6 @@ EXPORTS
 	mrb_range_beg_len
 	mrb_gc_free_str
 	mrb_str_modify
-	mrb_str_literal
 	mrb_str_concat
 	mrb_str_plus
 	mrb_ptr_to_str
@@ -244,7 +243,10 @@ EXPORTS
 	mrb_str_append
 	mrb_str_cmp
 	mrb_str_to_cstr
+	mrb_str_pool
+	;; for MRB_WORD_BOXING
 	;mrb_float_value
+	;mrb_float_pool
 	;mrb_cptr_value
 	mrb_vm_special_get
 	mrb_vm_special_set
